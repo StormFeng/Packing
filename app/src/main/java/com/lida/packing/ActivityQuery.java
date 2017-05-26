@@ -66,6 +66,7 @@ public class ActivityQuery extends BaseActivity {
 
     @OnClick({R.id.tvType, R.id.tvPack, R.id.tvNumber, R.id.btnSearch})
     public void onViewClicked(View view) {
+        String sql = "";
         type = tvType.getText().toString();
         switch (view.getId()) {
             case R.id.tvType:
@@ -79,7 +80,6 @@ public class ActivityQuery extends BaseActivity {
                     Toast.makeText(_activity, "请选择出入库类型", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String sql = "";
                 if ("入库扫描".equals(type)) {
                     sql = "select OrderNo from SaleOrder where IsNull(StatusFlag,0)=2 ";
                 } else {
@@ -100,7 +100,6 @@ public class ActivityQuery extends BaseActivity {
                 packName = tvPack.getText().toString();
                 number = tvNumber.getText().toString();
                 codeNum = etCodeNum.getText().toString();
-
                 break;
         }
     }
