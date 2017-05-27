@@ -83,9 +83,36 @@ public class ActivityQuery extends BaseActivity {
         adapter = new AdapterAlreadyIn(_activity,listData);
         listView.addHeaderView(view);
         listView.setAdapter(adapter);
-        tvNumber.addTextChangedListener(textWatcher);
+        tvType.addTextChangedListener(tvTypeWatcher);
+        tvNumber.addTextChangedListener(tvNumberWatcher);
     }
-    TextWatcher textWatcher  = new TextWatcher() {
+
+    TextWatcher tvTypeWatcher = new TextWatcher() {
+        String s1;
+        String s2;
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            s1 = s.toString();
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            s2 = s.toString();
+            LogUtils.e(s1);
+            LogUtils.e(s2);
+            if(!s1.equals(s2)){
+                tvPack.setText("");
+                tvNumber.setText("");
+                etCodeNum.setText("");
+            }
+        }
+    };
+
+    TextWatcher tvNumberWatcher  = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
