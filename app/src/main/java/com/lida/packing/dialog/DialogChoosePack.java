@@ -62,6 +62,7 @@ public class DialogChoosePack extends Dialog {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 tv.setText(data.get(position).getStoreName());
+                tv.setTag(data.get(position).getStoreNo());
                 dismiss();
             }
         });

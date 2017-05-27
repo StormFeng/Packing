@@ -4,134 +4,208 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#333">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出入库操作"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"/>
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_setting"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"/>
+    </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="出入库类型:"
-            android:textSize="15sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvType"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="2"
-            android:gravity="center_vertical"
-            android:hint="请选择类型"
-            android:drawableRight="@mipmap/icon_arrow_r"
-            android:textSize="15sp" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="仓库:"
-            android:textSize="15sp"
-            android:gravity="center_vertical"/>
-        <TextView
-            android:id="@+id/tvPack"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:hint="请选择仓库"
-            android:textSize="15sp"
-            android:drawableRight="@mipmap/icon_arrow_r"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical"/>
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="单据编号:"
-            android:textSize="15sp"
-            android:gravity="center_vertical"/>
-        <TextView
-            android:id="@+id/tvNumber"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:hint="请选择单据编号"
-            android:textSize="15sp"
-            android:drawableRight="@mipmap/icon_arrow_r"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical"/>
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="包装箱条码:"
-            android:textSize="15sp"
-            android:gravity="center_vertical"/>
-        <EditText
-            android:id="@+id/etCodeNum"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:background="@null"
-            android:layout_height="match_parent"
-            android:hint="请输入包装箱条码"
-            android:textSize="15sp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical"/>
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"/>
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="确定"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/shape_5radiu_orange"
-        android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="出入库类型:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
+                    android:drawableRight="@mipmap/icon_arrow_r"
+                    android:gravity="center_vertical"
+                    android:hint="请选择类型"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="仓库:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvPack"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
+                    android:drawableRight="@mipmap/icon_arrow_r"
+                    android:gravity="center_vertical"
+                    android:hint="请选择仓库"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="单据编号:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
+                    android:drawableRight="@mipmap/icon_arrow_r"
+                    android:gravity="center_vertical"
+                    android:hint="请选择单据编号"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="包装箱条码:"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etCodeNum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入包装箱条码"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_5radiu_orange"
+                    android:text="确定"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_5radiu_gray"
+                    android:text="撤销"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.lida.packing.utils.InnerListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"></com.lida.packing.utils.InnerListView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
