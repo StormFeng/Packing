@@ -108,6 +108,8 @@ public class ActivityQuery extends BaseActivity {
                 tvPack.setText("");
                 tvNumber.setText("");
                 etCodeNum.setText("");
+                listData.clear();
+                adapter.notifyDataSetChanged();
             }
         }
     };
@@ -120,12 +122,14 @@ public class ActivityQuery extends BaseActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            initList();
+
         }
 
         @Override
         public void afterTextChanged(Editable s) {
-
+            if(!"".equals(s.toString())){
+                initList();
+            }
         }
     };
 
